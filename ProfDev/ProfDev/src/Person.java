@@ -6,6 +6,8 @@ public class Person {
 	private int comedy;
 	private int fantasy;
 	private int sciFi;
+	private String ratingPref = "0";
+	
 	public Person(String name) {
 		this.name = name;
 	}
@@ -45,5 +47,10 @@ public class Person {
 	public void setSciFi(int sciFi) {
 		this.sciFi = sciFi;
 	}
-	
+	public String getRatingPref() {
+		return ratingPref;
+	}
+	public void setRatingPref(String ratingPref) {
+		this.ratingPref = ratingPref;
+	}
 }

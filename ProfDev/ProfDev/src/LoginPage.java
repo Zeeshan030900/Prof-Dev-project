@@ -36,11 +36,11 @@ public class LoginPage {
 	
 	public Component TitleText() {
 		JLabel label1 = new JLabel();
-		label1.setText("What Should I Watch");
+		label1.setText("What Should I Watch?");
 		label1.setFont(new Font("Courier", Font.BOLD,17));
-		label1.setBounds(160, 40, 270, 50);
+		label1.setBounds(160, 40, 280, 50);
 		label1.setHorizontalTextPosition(JLabel.LEFT);
-		label1.setBorder(BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(204,204,204)));
+		label1.setBorder(BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(204,204,0)));
 		label1.setForeground(new Color(64,64,64));
 		Image img = icon.getImage();
 		Image imgS = img.getScaledInstance(60, 40, Image.SCALE_SMOOTH);

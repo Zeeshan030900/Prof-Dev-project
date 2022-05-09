@@ -25,7 +25,7 @@ public class Frame {
 		frame.setIconImage(icon.getImage());
 		frame.setTitle("What Should I Watch");
 		frame.setLayout(null);
-		frame.setLocationRelativeTo(null);
+		
 		TitleText();
 		horrorSect();
 		comedySect();
@@ -34,10 +34,12 @@ public class Frame {
 		sciFiSect();
 		login();
 		submit();
-		frame.setBounds(0,0,600,600);
+		ratingPref();
+		frame.setBounds(0,0,600,700);
 		//original - frame.getContentPane().setBackground(new Color(251,95,106));
 		//frame.getContentPane().setBackground(new Color(251,250,248));//off white greyish
 		frame.getContentPane().setBackground(new Color(255,255,255));
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
 	}
@@ -48,7 +50,7 @@ public class Frame {
 		label1.setHorizontalTextPosition(JLabel.LEFT);
 		label1.setBounds(100, 25, 300, 40);
 		//label1.setBorder(BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(232,103,35)));//orange
-		label1.setBorder(BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(204,204,204)));
+		label1.setBorder(BorderFactory.createMatteBorder(0, 0, 3, 0, new Color(204,204,0)));
 		label1.setFont(new Font("Courier", Font.BOLD,17));
 		label1.setHorizontalAlignment(JLabel.CENTER);
 		label1.setForeground(new Color(64,64,64));
@@ -652,9 +654,31 @@ public class Frame {
 		return frame;
 	}
 	
+	public Component ratingPref() {
+		JLabel label = new JLabel("What the lowest rating of a movie that is acceptable to you? ");
+		label.setBounds(10, 455, 600, 70);
+		label.setFont(new Font(Font.SERIF, Font.BOLD,17));
+		frame.add(label);
+		
+		Integer[] ratings = {0,1,2,3,4,5,6,7,8,9,10};
+		JComboBox comboBox = new JComboBox(ratings);
+		comboBox.setBounds(455, 482, 40, 20);
+		comboBox.setBackground(Color.white);
+		comboBox.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				person.setRatingPref(comboBox.getSelectedItem().toString());
+			}
+			
+		});
+		frame.add(comboBox);
+		return frame;
+	}
+	
 	public Component submit() {
 		JButton button = new JButton("Submit");
-		button.setBounds(150, 450, 200, 50);
+		button.setBounds(150, 550, 200, 50);
 		button.setBackground(Color.red);
 		button.setForeground(Color.white);
 		button.setFont(new Font("Courier",Font.BOLD, 17));
@@ -664,7 +688,7 @@ public class Frame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()== button) {
-					new MovieListFrame(db.getMovie(person.getAction(), person.getComedy(), person.getHorror(), person.getFantasy(), person.getSciFi()));
+					new MovieListFrame(db.getMovie(person));
 				}
 				
 			}
@@ -682,7 +706,6 @@ public class Frame {
 		button.setForeground(Color.white);
 		button.setFont(new Font("Courier",Font.BOLD, 12));
 		button.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == button) {

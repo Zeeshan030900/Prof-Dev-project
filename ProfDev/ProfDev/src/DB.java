@@ -16,17 +16,18 @@ public class DB {
 				e.printStackTrace();
 			}
 	}
-	public ArrayList<Movie> getMovie(int action, int comedy, int horror, int fantasy, int scifi) {
+	public ArrayList<Movie> getMovie(Person person) {
 		PreparedStatement s;
 		list = new ArrayList<>();
 		try {
-			s = connection.prepareStatement("SELECT *, ReleaseYear, Rating, SUM((Horror * ?) + (Action * ?) + (Comedy * ?) + (Fantasy * ?) + (SciFi * ?)) AS Overall FROM Movies list GROUP BY Title ORDER BY Overall DESC LIMIT 15;");
+			s = connection.prepareStatement("SELECT *, ReleaseYear, Rating, SUM((Horror * ?) + (Action * ?) + (Comedy * ?) + (Fantasy * ?) + (SciFi * ?)) AS Overall FROM Movies WHERE Rating >= ? GROUP BY Title ORDER BY Overall DESC LIMIT 15;");
 //			s = connection.prepareStatement("SELECT * FROM Movies list;");
-			s.setInt(1, horror);
-			s.setInt(2, action);
-			s.setInt(3, comedy);
-			s.setInt(4, fantasy);
-			s.setInt(5, scifi);
+			s.setInt(1, person.getHorror());
+			s.setInt(2, person.getAction());
+			s.setInt(3, person.getComedy());
+			s.setInt(4, person.getFantasy());
+			s.setInt(5, person.getSciFi());
+			s.setString(6, person.getRatingPref());
 			ResultSet results = s.executeQuery();
 			
 			while(results.next()) {
