@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.util.ArrayList;
+
 
 public class DB {
 	private static final String JDBC_CONNECTION_STRING = "jdbc:sqlite:./data/movies.db";
@@ -11,21 +13,23 @@ public class DB {
 				e.printStackTrace();
 			}
 	}
-	public String getMovie(double action, double commedy, double horror) {
+	public ArrayList<Movie> getMovie(int action, int comedy, int horror, int fantasy, int scifi) {
 		PreparedStatement s;
-		String buffer = "";
+		ArrayList<Movie> list = new ArrayList<>();
 		try {
-			s = connection.prepareStatement("SELECT Title, SUM((Horror * ?) + (Action * ?) + (Comedy * ?)) AS Overall FROM Movies list GROUP BY Title ORDER BY Overall DESC;");
+			s = connection.prepareStatement("SELECT *, ReleaseYear, Rating, SUM((Horror * ?) + (Action * ?) + (Comedy * ?) + (Fantasy * ?) + (SciFi * ?)) AS Overall FROM Movies list GROUP BY Title ORDER BY Overall DESC LIMIT 15;");
 //			s = connection.prepareStatement("SELECT * FROM Movies list;");
-			s.setDouble(1, horror);
-			s.setDouble(2, action);
-			s.setDouble(3, commedy);
+			s.setInt(1, horror);
+			s.setInt(2, action);
+			s.setInt(3, comedy);
+			s.setInt(4, fantasy);
+			s.setInt(5, scifi);
 			ResultSet results = s.executeQuery();
+			
 			while(results.next()) {
-				
-			buffer += results.getString("Title") + "\n";
+			list.add(new Movie(results.getString("Title"), results.getString("ReleaseYear"), results.getString("Rating")));
 			}
-			return buffer;
+			return list;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
