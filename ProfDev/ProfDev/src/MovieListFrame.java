@@ -1,3 +1,4 @@
+
 import java.awt.Component;
 import java.util.ArrayList;
 
@@ -10,7 +11,7 @@ public class MovieListFrame {
 	JFrame frame = new JFrame();
 	MovieListFrame(ArrayList<Movie> list){
 		this.list = list;
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setIconImage(icon.getImage());
 		frame.setTitle("What Should I Watch");
 		frame.setResizable(false);

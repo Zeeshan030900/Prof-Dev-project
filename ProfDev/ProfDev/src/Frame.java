@@ -24,15 +24,16 @@ public class Frame {
 		frame.setIconImage(icon.getImage());
 		frame.setTitle("What Should I Watch");
 		frame.setLayout(null);
+		frame.setLocationRelativeTo(null);
 		TitleText();
 		horrorSect();
 		comedySect();
 		fantasySect();
 		actionSect();
 		sciFiSect();
-		submit();
 		login();
-		frame.setBounds(0,0,500,600);
+		submit();
+		frame.setBounds(0,0,600,600);
 		frame.setVisible(true);
 		frame.setResizable(false);
 	}
@@ -40,27 +41,29 @@ public class Frame {
 	public Component TitleText() {
 		JLabel label1 = new JLabel();
 		label1.setText("What Should I Watch");
-		label1.setFont(new Font("Courier", Font.BOLD,12));
+		label1.setFont(new Font("Courier", Font.BOLD,16));
 		label1.setBounds(175, 0, 250, 50);
 		JLabel label2 = new JLabel();
 		label2.setText("What is your preference for the following genres:");
-		label2.setBounds(10, 30, 280, 50);
+		label2.setBounds(10, 30, 280, 55);
 		
-		JLabel label3 = new JLabel();
-		label3.setText("Really dislike");
-		label3.setBounds(60,70,75,50);
+		JLabel label3 = new JLabel("Hate");
+		label3.setBounds(100,70,75,50);
 		JLabel label4 = new JLabel();
-		label4.setText("Dislike");
-		label4.setBounds(160,70,75,50);
+		label4.setText("Really Dislike");
+		label4.setBounds(150,70,75,50);
 		JLabel label5 = new JLabel();
-		label5.setText("Decent");
-		label5.setBounds(230,70,75,50);
+		label5.setText("Dislike");
+		label5.setBounds(250,70,75,50);
 		JLabel label6 = new JLabel();
-		label6.setText("Like");
-		label6.setBounds(290,70,75,50);
+		label6.setText("Decent");
+		label6.setBounds(320,70,75,50);
 		JLabel label7 = new JLabel();
-		label7.setText("Really like");
-		label7.setBounds(360,70,75,50);
+		label7.setText("Like");
+		label7.setBounds(405,70,75,50);
+		JLabel label8 = new JLabel();
+		label8.setText("Really like");
+		label8.setBounds(470,70,75,50);
 		
 		frame.add(label1);
 		frame.add(label2);
@@ -69,14 +72,28 @@ public class Frame {
 		frame.add(label5);
 		frame.add(label6);
 		frame.add(label7);
+		frame.add(label8);
 		return frame;
 	}
 	public Component horrorSect() {
 		JLabel label = new JLabel();
 		label.setText("Horror:");
 		label.setBounds(0,20,100,50);
+		
+		JRadioButton b0 = new JRadioButton();
+		b0.setBounds(95,20,25,50);
+		b0.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == b0) {
+					person.setAction(0);
+				}
+			}
+		
+		});
 		JRadioButton b1 = new JRadioButton();
-		b1.setBounds(70,20,25,50);
+		b1.setBounds(170,20,25,50);
 		b1.addActionListener(new ActionListener(){
 
 			@Override
@@ -88,7 +105,7 @@ public class Frame {
 		
 		});
 		JRadioButton b2 = new JRadioButton();
-		b2.setBounds(140, 20, 25, 50);
+		b2.setBounds(245, 20, 25, 50);
 		b2.addActionListener(new ActionListener(){
 
 			@Override
@@ -100,7 +117,7 @@ public class Frame {
 		
 		});
 		JRadioButton b3 = new JRadioButton();
-		b3.setBounds(210, 20, 25, 50);
+		b3.setBounds(315, 20, 25, 50);
 		b3.addActionListener(new ActionListener(){
 
 			@Override
@@ -112,7 +129,7 @@ public class Frame {
 		
 		});
 		JRadioButton b4 = new JRadioButton();
-		b4.setBounds(270, 20, 25, 50);
+		b4.setBounds(395, 20, 25, 50);
 		b4.addActionListener(new ActionListener(){
 
 			@Override
@@ -124,7 +141,7 @@ public class Frame {
 		
 		});
 		JRadioButton b5 = new JRadioButton();
-		b5.setBounds(340, 20, 25, 50);
+		b5.setBounds(474, 20, 25, 50);
 		b5.addActionListener(new ActionListener(){
 
 			@Override
@@ -136,6 +153,7 @@ public class Frame {
 		
 		});
 		ButtonGroup group = new ButtonGroup();
+		group.add(b0);
 		group.add(b1);
 		group.add(b2);
 		group.add(b3);
@@ -143,22 +161,36 @@ public class Frame {
 		group.add(b5);
 		JPanel panel = new JPanel(null);
 		panel.add(label, FlowLayout.LEFT);
+		panel.add(b0);
 		panel.add(b1);
 		panel.add(b2);
 		panel.add(b3);
 		panel.add(b4);
 		panel.add(b5);
-		panel.setBounds(30, 90, 400, 60);
+		panel.setBounds(10, 90, 600, 60);
 		panel.setVisible(true);
 		frame.add(panel);
 		return frame;
 	}
 	public Component comedySect() {
-		JLabel label = new JLabel();
-		label.setText("Comedy:");
+		JLabel label = new JLabel("Comedy:");
 		label.setBounds(0,20,100,50);
+		
+		JRadioButton b0 = new JRadioButton();
+		b0.setBounds(95,20,25,50);
+		b0.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == b0) {
+					person.setAction(0);
+				}
+			}
+		
+		});
+		
 		JRadioButton b1 = new JRadioButton();
-		b1.setBounds(70,20,25,50);
+		b1.setBounds(170,20,25,50);
 		b1.addActionListener(new ActionListener(){
 
 			@Override
@@ -170,7 +202,7 @@ public class Frame {
 		
 		});
 		JRadioButton b2 = new JRadioButton();
-		b2.setBounds(140, 20, 25, 50);
+		b2.setBounds(245, 20, 25, 50);
 		b2.addActionListener(new ActionListener(){
 
 			@Override
@@ -182,7 +214,7 @@ public class Frame {
 		
 		});
 		JRadioButton b3 = new JRadioButton();
-		b3.setBounds(210, 20, 25, 50);
+		b3.setBounds(315, 20, 25, 50);
 		b3.addActionListener(new ActionListener(){
 
 			@Override
@@ -194,7 +226,7 @@ public class Frame {
 		
 		});
 		JRadioButton b4 = new JRadioButton();
-		b4.setBounds(270, 20, 25, 50);
+		b4.setBounds(395, 20, 25, 50);
 		b4.addActionListener(new ActionListener(){
 
 			@Override
@@ -206,7 +238,7 @@ public class Frame {
 		
 		});
 		JRadioButton b5 = new JRadioButton();
-		b5.setBounds(340, 20, 25, 50);
+		b5.setBounds(474, 20, 25, 50);
 		b5.addActionListener(new ActionListener(){
 
 			@Override
@@ -218,6 +250,7 @@ public class Frame {
 		
 		});
 		ButtonGroup group = new ButtonGroup();
+		group.add(b0);
 		group.add(b1);
 		group.add(b2);
 		group.add(b3);
@@ -226,22 +259,35 @@ public class Frame {
 		
 		JPanel panel = new JPanel(null);
 		panel.add(label, FlowLayout.LEFT);
+		panel.add(b0);
 		panel.add(b1);
 		panel.add(b2);
 		panel.add(b3);
 		panel.add(b4);
 		panel.add(b5);
-		panel.setBounds(30, 140, 400, 60);
+		panel.setBounds(10, 140, 600, 60);
 		panel.setVisible(true);
 		frame.add(panel);
 		return frame;
 	}
 	public Component fantasySect() {
-		JLabel label = new JLabel();
-		label.setText("Fantasy:");
+		JLabel label = new JLabel("Fantasy:");
 		label.setBounds(0,20,100,50);
+		JRadioButton b0 = new JRadioButton();
+		b0.setBounds(95,20,25,50);
+		b0.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == b0) {
+					person.setAction(0);
+				}
+			}
+		
+		});
+		
 		JRadioButton b1 = new JRadioButton();
-		b1.setBounds(70,20,25,50);
+		b1.setBounds(170,20,25,50);
 		b1.addActionListener(new ActionListener(){
 
 			@Override
@@ -253,7 +299,7 @@ public class Frame {
 		
 		});
 		JRadioButton b2 = new JRadioButton();
-		b2.setBounds(140, 20, 25, 50);
+		b2.setBounds(245, 20, 25, 50);
 		b2.addActionListener(new ActionListener(){
 
 			@Override
@@ -265,7 +311,7 @@ public class Frame {
 		
 		});
 		JRadioButton b3 = new JRadioButton();
-		b3.setBounds(210, 20, 25, 50);
+		b3.setBounds(315, 20, 25, 50);
 		b3.addActionListener(new ActionListener(){
 
 			@Override
@@ -277,7 +323,7 @@ public class Frame {
 		
 		});
 		JRadioButton b4 = new JRadioButton();
-		b4.setBounds(270, 20, 25, 50);
+		b4.setBounds(395, 20, 25, 50);
 		b4.addActionListener(new ActionListener(){
 
 			@Override
@@ -289,7 +335,7 @@ public class Frame {
 		
 		});
 		JRadioButton b5 = new JRadioButton();
-		b5.setBounds(340, 20, 25, 50);
+		b5.setBounds(474, 20, 25, 50);
 		b5.addActionListener(new ActionListener(){
 
 			@Override
@@ -301,6 +347,7 @@ public class Frame {
 		
 		});
 		ButtonGroup group = new ButtonGroup();
+		group.add(b0);
 		group.add(b1);
 		group.add(b2);
 		group.add(b3);
@@ -309,12 +356,13 @@ public class Frame {
 		
 		JPanel panel = new JPanel(null);
 		panel.add(label, FlowLayout.LEFT);
+		panel.add(b0);
 		panel.add(b1);
 		panel.add(b2);
 		panel.add(b3);
 		panel.add(b4);
 		panel.add(b5);
-		panel.setBounds(30, 200, 400, 60);
+		panel.setBounds(10, 200, 600, 60);
 		panel.setVisible(true);
 		frame.add(panel);
 		return frame;
@@ -324,8 +372,22 @@ public class Frame {
 		JLabel label = new JLabel();
 		label.setText("Action:");
 		label.setBounds(0,20,100,50);
+		
+		JRadioButton b0 = new JRadioButton();
+		b0.setBounds(95,20,25,50);
+		b0.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == b0) {
+					person.setAction(0);
+				}
+			}
+		
+		});
+		
 		JRadioButton b1 = new JRadioButton();
-		b1.setBounds(70,20,25,50);
+		b1.setBounds(170,20,25,50);
 		b1.addActionListener(new ActionListener(){
 
 			@Override
@@ -337,7 +399,7 @@ public class Frame {
 		
 		});
 		JRadioButton b2 = new JRadioButton();
-		b2.setBounds(140, 20, 25, 50);
+		b2.setBounds(245, 20, 25, 50);
 		b2.addActionListener(new ActionListener(){
 
 			@Override
@@ -349,7 +411,7 @@ public class Frame {
 		
 		});
 		JRadioButton b3 = new JRadioButton();
-		b3.setBounds(210, 20, 25, 50);
+		b3.setBounds(315, 20, 25, 50);
 		b3.addActionListener(new ActionListener(){
 
 			@Override
@@ -361,7 +423,7 @@ public class Frame {
 		
 		});
 		JRadioButton b4 = new JRadioButton();
-		b4.setBounds(270, 20, 25, 50);
+		b4.setBounds(395, 20, 25, 50);
 		b4.addActionListener(new ActionListener(){
 
 			@Override
@@ -373,7 +435,7 @@ public class Frame {
 		
 		});
 		JRadioButton b5 = new JRadioButton();
-		b5.setBounds(340, 20, 25, 50);
+		b5.setBounds(474, 20, 25, 50);
 		b5.addActionListener(new ActionListener(){
 
 			@Override
@@ -386,6 +448,7 @@ public class Frame {
 		});
 		
 		ButtonGroup group = new ButtonGroup();
+		group.add(b0);
 		group.add(b1);
 		group.add(b2);
 		group.add(b3);
@@ -393,23 +456,36 @@ public class Frame {
 		group.add(b5);
 		JPanel panel = new JPanel(null);
 		panel.add(label, FlowLayout.LEFT);
+		panel.add(b0);
 		panel.add(b1);
 		panel.add(b2);
 		panel.add(b3);
 		panel.add(b4);
 		panel.add(b5);
-		panel.setBounds(30, 260, 400, 60);
+		panel.setBounds(10, 260, 600, 60);
 		panel.setVisible(true);
 		frame.add(panel);
 		return frame;
 	}
-	
 	public Component sciFiSect() {
 		JLabel label = new JLabel();
 		label.setText("Sci-Fi:");
 		label.setBounds(0,20,100,50);
+
+		JRadioButton b0 = new JRadioButton();
+		b0.setBounds(95,20,25,50);
+		b0.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == b0) {
+					person.setAction(0);
+				}
+			}
+		
+		});
 		JRadioButton b1 = new JRadioButton();
-		b1.setBounds(70,20,25,50);
+		b1.setBounds(170,20,25,50);
 		b1.addActionListener(new ActionListener(){
 
 			@Override
@@ -421,7 +497,7 @@ public class Frame {
 		
 		});
 		JRadioButton b2 = new JRadioButton();
-		b2.setBounds(140, 20, 25, 50);
+		b2.setBounds(245, 20, 25, 50);
 		b2.addActionListener(new ActionListener(){
 
 			@Override
@@ -433,7 +509,7 @@ public class Frame {
 		
 		});
 		JRadioButton b3 = new JRadioButton();
-		b3.setBounds(210, 20, 25, 50);
+		b3.setBounds(315, 20, 25, 50);
 		b3.addActionListener(new ActionListener(){
 
 			@Override
@@ -445,7 +521,7 @@ public class Frame {
 		
 		});
 		JRadioButton b4 = new JRadioButton();
-		b4.setBounds(270, 20, 25, 50);
+		b4.setBounds(395, 20, 25, 50);
 		b4.addActionListener(new ActionListener(){
 
 			@Override
@@ -457,7 +533,7 @@ public class Frame {
 		
 		});
 		JRadioButton b5 = new JRadioButton();
-		b5.setBounds(340, 20, 25, 50);
+		b5.setBounds(474, 20, 25, 50);
 		b5.addActionListener(new ActionListener(){
 
 			@Override
@@ -469,6 +545,7 @@ public class Frame {
 		
 		});
 		ButtonGroup group = new ButtonGroup();
+		group.add(b0);
 		group.add(b1);
 		group.add(b2);
 		group.add(b3);
@@ -477,16 +554,18 @@ public class Frame {
 		
 		JPanel panel = new JPanel(null);
 		panel.add(label, FlowLayout.LEFT);
+		panel.add(b0);
 		panel.add(b1);
 		panel.add(b2);
 		panel.add(b3);
 		panel.add(b4);
 		panel.add(b5);
-		panel.setBounds(30, 320, 400, 60);
+		panel.setBounds(10, 320, 600, 60);
 		panel.setVisible(true);
 		frame.add(panel);
 		return frame;
 	}
+	
 	public Component submit() {
 		JButton button = new JButton("Submit");
 		button.setBounds(170, 450, 100, 50);
@@ -504,16 +583,16 @@ public class Frame {
 		frame.add(button);
 		return frame;
 	}
-	
 	public Component login() {
 		JButton button = new JButton("Login");
-		button.setBounds(170,500,100,50);
+		button.setBounds(450,20,100,25);
 		button.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == button) {
-					new LoginFrame();
+					IDandPasswords idandpasswords = new IDandPasswords();
+					new LoginPage(idandpasswords.getLogininfo());
 				}
 			}
 		});

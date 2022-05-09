@@ -6,8 +6,62 @@ public class Movie {
 	private String releaseDate;
 	private String title;
 	private String rating;
+	private int horror;
+	private int action;
+	private int comedy;
+	private int fantasy;
+	private int sciFi;
 	
-	
+	public int getHorror() {
+		return horror;
+	}
+
+
+	public void setHorror(int horror) {
+		this.horror = horror;
+	}
+
+
+	public int getAction() {
+		return action;
+	}
+
+
+	public void setAction(int action) {
+		this.action = action;
+	}
+
+
+	public int getComedy() {
+		return comedy;
+	}
+
+
+	public void setComedy(int comedy) {
+		this.comedy = comedy;
+	}
+
+
+	public int getFantasy() {
+		return fantasy;
+	}
+
+
+	public void setFantasy(int fantasy) {
+		this.fantasy = fantasy;
+	}
+
+
+	public int getSciFi() {
+		return sciFi;
+	}
+
+
+	public void setSciFi(int sciFi) {
+		this.sciFi = sciFi;
+	}
+
+
 	public Movie(String title, String releaseDate, String rating) {
 		this.releaseDate = releaseDate;
 		this.title = title;
