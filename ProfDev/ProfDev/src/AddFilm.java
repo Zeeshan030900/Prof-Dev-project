@@ -31,18 +31,22 @@ public class AddFilm extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+
 	public AddFilm() {
 		Movie movie = new Movie("","","");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 900, 502);
+		
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		getContentPane().setBackground(Color.white);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Enter Film Name:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBackground(new Color(240, 240, 240));
+		lblNewLabel.setForeground(new Color(64,64,64));
 		lblNewLabel.setBounds(10, 32, 147, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -53,7 +57,8 @@ public class AddFilm extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("Film Rating /10:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel_1.setBounds(418, 32, 133, 14);
+		lblNewLabel_1.setBounds(418, 32, 133, 17);
+		lblNewLabel_1.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_1);
 		
 		textField_1 = new JTextField();
@@ -65,6 +70,7 @@ public class AddFilm extends JFrame {
 		lblNewLabel_0.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_0.setBackground(new Color(240, 240, 240));
 		lblNewLabel_0.setBounds(650, 32, 147, 14);
+		lblNewLabel_0.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_0);
 		
 		textField_2 = new JTextField();
@@ -75,34 +81,38 @@ public class AddFilm extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("Horror Rating");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_2.setBounds(301, 70, 133, 20);
+		lblNewLabel_2.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Sci-Fi Rating");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_3.setBounds(301, 374, 133, 20);
+		lblNewLabel_3.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Comedy Rating");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_4.setBounds(301, 138, 133, 25);
+		lblNewLabel_4.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Fantasy Rating");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_5.setBounds(301, 227, 133, 20);
+		lblNewLabel_5.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Action Rating");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_6.setBounds(301, 296, 133, 20);
+		lblNewLabel_6.setForeground(new Color(64,64,64));
 		contentPane.add(lblNewLabel_6);
 		
 		JButton btnNewButton = new JButton("SUBMIT");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton.setBounds(277, 431, 122, 23);
-		/*
-		 * Do this
-		 */
+		btnNewButton.setBackground(Color.red);
+		btnNewButton.setForeground(Color.white);
 		
 		
 		contentPane.add(btnNewButton);
@@ -112,8 +122,9 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton.setBounds(73, 95, 21, 36);
+		rdbtnNewRadioButton.setBackground(Color.white);
+		rdbtnNewRadioButton.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == rdbtnNewRadioButton) {
@@ -127,8 +138,9 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("");
 		rdbtnNewRadioButton_1.setBounds(176, 108, 21, 23);
+		rdbtnNewRadioButton_1.setBackground(Color.white);
 		rdbtnNewRadioButton_1.addActionListener(new ActionListener() {
-
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == rdbtnNewRadioButton_1) {
@@ -142,6 +154,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("");
 		rdbtnNewRadioButton_2.setBounds(311, 108, 21, 23);
+		rdbtnNewRadioButton_2.setBackground(Color.white);
 		rdbtnNewRadioButton_2.addActionListener(new ActionListener() {
 
 			@Override
@@ -155,6 +168,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("");
 		rdbtnNewRadioButton_3.setBounds(460, 108, 21, 23);
+		rdbtnNewRadioButton_3.setBackground(Color.white);
 		rdbtnNewRadioButton_3.addActionListener(new ActionListener() {
 
 			@Override
@@ -171,6 +185,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_4.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_4.setBounds(599, 95, 21, 36);
+		rdbtnNewRadioButton_4.setBackground(Color.white);
+		rdbtnNewRadioButton_4.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_4.addActionListener(new ActionListener() {
 
 			@Override
@@ -188,6 +204,8 @@ public class AddFilm extends JFrame {
 		rdbtnNewRadioButton_5.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_5.setBackground(new Color(240, 240, 240));
 		rdbtnNewRadioButton_5.setBounds(599, 165, 21, 36);
+		rdbtnNewRadioButton_5.setBackground(Color.white);
+		rdbtnNewRadioButton_5.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_5.addActionListener(new ActionListener() {
 
 			@Override
@@ -204,6 +222,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_6.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_6.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_6.setBounds(599, 250, 21, 36);
+		rdbtnNewRadioButton_6.setBackground(Color.white);
+		rdbtnNewRadioButton_6.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_6.addActionListener(new ActionListener() {
 
 			@Override
@@ -220,6 +240,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_7.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_7.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_7.setBounds(599, 326, 21, 36);
+		rdbtnNewRadioButton_7.setBackground(Color.white);
+		rdbtnNewRadioButton_7.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_7.addActionListener(new ActionListener() {
 
 			@Override
@@ -236,6 +258,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_8.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_8.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_8.setBounds(599, 390, 21, 36);
+		rdbtnNewRadioButton_8.setBackground(Color.white);
+		rdbtnNewRadioButton_8.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_8.addActionListener(new ActionListener() {
 
 			@Override
@@ -249,6 +273,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("");
 		rdbtnNewRadioButton_9.setBounds(460, 176, 21, 23);
+		rdbtnNewRadioButton_9.setBackground(Color.white);
 		rdbtnNewRadioButton_9.addActionListener(new ActionListener() {
 
 			@Override
@@ -262,6 +287,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("");
 		rdbtnNewRadioButton_10.setBounds(460, 263, 21, 23);
+		rdbtnNewRadioButton_10.setBackground(Color.white);
 		rdbtnNewRadioButton_10.addActionListener(new ActionListener() {
 
 			@Override
@@ -275,6 +301,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("");
 		rdbtnNewRadioButton_11.setBounds(460, 339, 21, 23);
+		rdbtnNewRadioButton_11.setBackground(Color.white);
 		rdbtnNewRadioButton_11.addActionListener(new ActionListener() {
 
 			@Override
@@ -288,6 +315,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_12 = new JRadioButton("");
 		rdbtnNewRadioButton_12.setBounds(460, 403, 21, 23);
+		rdbtnNewRadioButton_12.setBackground(Color.white);
 		rdbtnNewRadioButton_12.addActionListener(new ActionListener() {
 
 			@Override
@@ -301,6 +329,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_13 = new JRadioButton("");
 		rdbtnNewRadioButton_13.setBounds(176, 189, 21, 23);
+		rdbtnNewRadioButton_13.setBackground(Color.white);
 		rdbtnNewRadioButton_13.addActionListener(new ActionListener() {
 
 			@Override
@@ -314,6 +343,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_14 = new JRadioButton("");
 		rdbtnNewRadioButton_14.setBounds(311, 176, 21, 23);
+		rdbtnNewRadioButton_14.setBackground(Color.white);
 		rdbtnNewRadioButton_14.addActionListener(new ActionListener() {
 
 			@Override
@@ -327,6 +357,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_15 = new JRadioButton("");
 		rdbtnNewRadioButton_15.setBounds(312, 263, 21, 23);
+		rdbtnNewRadioButton_15.setBackground(Color.white);
 		rdbtnNewRadioButton_15.addActionListener(new ActionListener() {
 
 			@Override
@@ -340,6 +371,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_16 = new JRadioButton("");
 		rdbtnNewRadioButton_16.setBounds(311, 339, 21, 23);
+		rdbtnNewRadioButton_16.setBackground(Color.white);
 		rdbtnNewRadioButton_16.addActionListener(new ActionListener() {
 
 			@Override
@@ -353,6 +385,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_17 = new JRadioButton("");
 		rdbtnNewRadioButton_17.setBounds(316, 401, 21, 23);
+		rdbtnNewRadioButton_17.setBackground(Color.white);
 		rdbtnNewRadioButton_17.addActionListener(new ActionListener() {
 
 			@Override
@@ -366,6 +399,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_18 = new JRadioButton("");
 		rdbtnNewRadioButton_18.setBounds(176, 263, 21, 23);
+		rdbtnNewRadioButton_18.setBackground(Color.white);
 		rdbtnNewRadioButton_18.addActionListener(new ActionListener() {
 
 			@Override
@@ -379,6 +413,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_19 = new JRadioButton("");
 		rdbtnNewRadioButton_19.setBounds(176, 339, 21, 23);
+		rdbtnNewRadioButton_19.setBackground(Color.white);
 		rdbtnNewRadioButton_19.addActionListener(new ActionListener() {
 
 			@Override
@@ -392,6 +427,7 @@ public class AddFilm extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton_20 = new JRadioButton("");
 		rdbtnNewRadioButton_20.setBounds(176, 403, 21, 23);
+		rdbtnNewRadioButton_20.setBackground(Color.white);
 		rdbtnNewRadioButton_20.addActionListener(new ActionListener() {
 
 			@Override
@@ -408,6 +444,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_21.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_21.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_21.setBounds(73, 176, 21, 36);
+		rdbtnNewRadioButton_21.setBackground(Color.white);
+		rdbtnNewRadioButton_21.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_21.addActionListener(new ActionListener() {
 
 			@Override
@@ -424,6 +462,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_22.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_22.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_22.setBounds(73, 250, 21, 36);
+		rdbtnNewRadioButton_22.setBackground(Color.white);
+		rdbtnNewRadioButton_22.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_22.addActionListener(new ActionListener() {
 
 			@Override
@@ -440,6 +480,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_23.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_23.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_23.setBounds(73, 326, 21, 36);
+		rdbtnNewRadioButton_23.setBackground(Color.white);
+		rdbtnNewRadioButton_23.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_23.addActionListener(new ActionListener() {
 
 			@Override
@@ -456,6 +498,8 @@ public class AddFilm extends JFrame {
 	    rdbtnNewRadioButton_24.setHorizontalTextPosition(SwingConstants.CENTER);
 		rdbtnNewRadioButton_24.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rdbtnNewRadioButton_24.setBounds(73, 390, 21, 36);
+		rdbtnNewRadioButton_24.setBackground(Color.white);
+		rdbtnNewRadioButton_24.setForeground(new Color(64,64,64));
 		rdbtnNewRadioButton_24.addActionListener(new ActionListener() {
 
 			@Override
