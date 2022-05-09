@@ -568,7 +568,7 @@ public class Frame {
 	
 	public Component submit() {
 		JButton button = new JButton("Submit");
-		button.setBounds(170, 450, 100, 50);
+		button.setBounds(150, 450, 200, 50);
 		button.addActionListener(new ActionListener() {
 
 			@Override

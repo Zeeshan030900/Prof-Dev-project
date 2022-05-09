@@ -32,13 +32,12 @@ public class DB {
 			while(results.next()) {
 			list.add(new Movie(results.getString("Title"), results.getString("ReleaseYear"), results.getString("Rating")));
 			}
-			return list;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		close();
-		return null;
+		return list;
 	}
 	public boolean addData(String title, String releaseYear, String rating, int horror, int action, int comedy, int sciFi, int fantasy)  {
 		PreparedStatement s;
